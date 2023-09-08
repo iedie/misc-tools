@@ -34,20 +34,20 @@ const purgeExclusions = async () => {
 		const liElements = document.querySelectorAll('li.jobs-search-results__list-item');
 		// Loop through each <li> element
 		liElements.forEach((liElement) => {
-		  // Find the text content within the <li> element
-		  const textContent = liElement.textContent;
-		  // Check if the text content contains any of our keywords
-		  stringsToExclude.forEach((exclusion) => {
-			if (textContent.includes(exclusion)) {
-				// We found a match, remove the <li> element
-				liElement.remove();
-				// Increment the counter
-				count += 1
-				// We've removed the element, so let's continue to next iteration
-				return // equivalent of "continue" for a forEach loop
-			  }
-		  });
-		});	
+			// Find the text content within the <li> element
+			const textContent = liElement.textContent;
+			// Check if the text content contains any of our keywords
+			stringsToExclude.forEach((exclusion) => {
+				if (textContent.includes(exclusion)) {
+					// We found a match, remove the <li> element
+					liElement.remove();
+					// Increment the counter
+					count += 1
+					// We've removed the element, so let's continue to next iteration
+					return // equivalent of "continue" for a forEach loop
+				}
+			})
+		})
 		// Give it a slight timeout for changes to take effect before going to next iteration
 		await delay(100)
 	}
