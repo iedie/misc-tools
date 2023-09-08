@@ -22,7 +22,7 @@ const stringsToExclude = [
 let count = 0
 
 // We'll also create a delay function as it seems to only affect elements visible on the screen
-function delay (ms) {
+const delay = (ms) => {
     return new Promise((resolve,reject) => setTimeout(resolve,ms));
 }
 
